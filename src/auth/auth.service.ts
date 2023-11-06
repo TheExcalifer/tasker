@@ -42,7 +42,7 @@ export class AuthService {
 
     // * global config
     // * JWT
-    const payload = { sub: user._id, email: user.email };
+    const payload = { sub: user._id, email: user.email, role: user.role };
     return {
       access_token: await this.jwtService.signAsync(payload),
     };
