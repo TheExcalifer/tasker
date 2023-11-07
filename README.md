@@ -1,7 +1,8 @@
 ### Proejct Features
 
-- Login
-- Singup
+- Authentication
+- Authorization
+- CRUD
 
 ### Used Techonologies
 
