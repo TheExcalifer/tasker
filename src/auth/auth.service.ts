@@ -1,8 +1,4 @@
-import {
-  BadRequestException,
-  Injectable,
-  NotFoundException,
-} from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { CreateUserDto } from 'src/users/dto/create-user.dto';
 import { UsersService } from 'src/users/users.service';
 import * as bcrypt from 'bcrypt';
@@ -36,10 +32,12 @@ export class AuthService {
   async login(email: string, password: string): Promise<object> {
     // * Hash Password
     const user: any = await this.userService.findUser(email.toLowerCase());
-    if (!user) throw new NotFoundException();
+    if (!user)
+      throw new BadRequestException('Username or password is incorrect.');
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) throw new NotFoundException();
+    if (!isMatch)
+      throw new BadRequestException('Username or password is incorrect.');
 
     // * global config
     // * JWT

@@ -3,6 +3,7 @@
 - Authentication
 - Authorization
 - CRUD
+- Admin Panel
 
 ### Used Techonologies
 
