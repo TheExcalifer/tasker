@@ -5,6 +5,7 @@ import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { User } from 'src/users/user.schema';
 import { IUser } from 'src/users/interface/user.interface';
+import { loginDto } from './dto/login.dto';
 
 @Injectable()
 export class AuthService {
@@ -29,7 +30,8 @@ export class AuthService {
     }
   }
 
-  async login(email: string, password: string): Promise<object> {
+  async login(body: loginDto): Promise<object> {
+    const { email, password } = body;
     // * Hash Password
     const user: any = await this.userService.findUser(email.toLowerCase());
     if (!user)

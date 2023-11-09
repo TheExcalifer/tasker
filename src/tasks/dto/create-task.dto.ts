@@ -2,6 +2,7 @@ import { Transform, TransformFnParams } from 'class-transformer';
 import { IsEnum, IsNotEmpty, MaxLength, MinLength } from 'class-validator';
 import * as sanitizeHtml from 'sanitize-html';
 import { TaskStatus } from '../enum/task.enum';
+
 export class CreateTaskDto {
   @IsNotEmpty()
   @MinLength(1)

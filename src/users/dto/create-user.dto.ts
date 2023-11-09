@@ -1,6 +1,7 @@
 import { Transform, TransformFnParams } from 'class-transformer';
 import { IsEmail, IsNotEmpty, MaxLength, MinLength } from 'class-validator';
 import * as sanitizeHtml from 'sanitize-html';
+
 export class CreateUserDto {
   @IsNotEmpty()
   @MinLength(3)

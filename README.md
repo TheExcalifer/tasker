@@ -14,6 +14,7 @@
 - [Mongoose](https://mongoosejs.com/)
 - [JWT](https://jwt.io/)
 - [Bcrypt](https://www.npmjs.com/package/bcrypt)
+- [Swagger](https://www.npmjs.com/package/@nestjs/swagger)
 
 ## Admin Access
 
